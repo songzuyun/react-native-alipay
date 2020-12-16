@@ -76,7 +76,9 @@ dependencies {
 
     // 支付宝 SDK AAR 包所需的配置
     // implementation (name: 'alipaySdk-15.7.7-20200702160044', ext: 'aar')
-    implementation fileTree(dir: "libs", include: ["*.aar"])
+    // implementation fileTree(dir: "libs", include: ["*.aar"])
+    // 解决Android studio 4.00+ arr 包的bug  ，要求单独把arr包生成一个packege，方案链接 https://www.nuomiphp.com/eplan/en/139864.html
+    implementation project(":alipaysdk-15.8.00.201112210139")
 }
 
 def configureReactNativePom(def pom) {
